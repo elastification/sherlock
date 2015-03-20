@@ -8,19 +8,22 @@
 
 namespace Sherlock\components\aggregations;
 
-use sherlock\components\BaseComponent;
 use Sherlock\components\AggregationInterface;
+use sherlock\components\BaseComponent;
 
-abstract class BaseAggs extends BaseComponent implements AggregationInterface {
+abstract class BaseAggs extends BaseComponent implements AggregationInterface
+{
 
-    public function __construct($hashMap = null){
-        $this->params['aggs']  = null;
+    public function __construct($hashMap = null)
+    {
+        $this->params['aggs'] = null;
         parent::__construct($hashMap);
     }
 
-    public function aggs(AggregationInterface $aggs){
+    public function aggs(AggregationInterface $aggs)
+    {
         $this->params['aggs'] = $aggs;
         return $this;
     }
 
-} 
+}

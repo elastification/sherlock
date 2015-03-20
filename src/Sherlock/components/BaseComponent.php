@@ -3,6 +3,7 @@
  * User: Zachary Tong
  * Date: 2/7/13
  * Time: 5:20 PM
+ *
  * @package Sherlock\components
  */
 
@@ -116,7 +117,6 @@ abstract class BaseComponent
      * @return array
      */
     abstract public function toArray();
-
 
 
 }

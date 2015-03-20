@@ -3,12 +3,13 @@
  * User: Zachary Tong
  * Date: 2013-02-14
  * Time: 10:42 PM
+ *
  * @package Sherlock\components\mappings
  */
 namespace Sherlock\components\mappings;
 
-use Sherlock\components;
 use Sherlock\common\exceptions;
+use Sherlock\components;
 
 /**
  * @method \Sherlock\components\mappings\String field() field(\string $value)
@@ -19,7 +20,8 @@ use Sherlock\common\exceptions;
  * @method \Sherlock\components\mappings\String boost() boost(\float $value)
  * @method \Sherlock\components\mappings\String null_value() null_value(\string $value)
  * @method \Sherlock\components\mappings\String omit_norms() omit_norms(\bool $value)
- * @method \Sherlock\components\mappings\String omit_term_freq_and_positions() omit_term_freq_and_positions(\bool $value)
+ * @method \Sherlock\components\mappings\String omit_term_freq_and_positions() omit_term_freq_and_positions(\bool
+ *         $value)
  * @method \Sherlock\components\mappings\String index_options() index_options(\string $value)
  * @method \Sherlock\components\mappings\String analyzer() analyzer(\string $value)
  * @method \Sherlock\components\mappings\String index_analyzer() index_analyzer(\string $value)

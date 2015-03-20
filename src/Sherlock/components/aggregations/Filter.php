@@ -8,6 +8,7 @@ use Sherlock\components;
 
 /**]
  * Class Filter
+ *
  * @package Sherlock\components\aggregations
  *
  * @method \Sherlock\components\aggregations\Filter aggsname() aggsname(\string $value)
@@ -21,7 +22,7 @@ class Filter extends components\aggregations\BaseAggs implements components\Aggr
     public function __construct($hashMap = null)
     {
 
-        $this->params['aggsname']     = null;
+        $this->params['aggsname'] = null;
 
         parent::__construct($hashMap);
     }
@@ -77,7 +78,7 @@ class Filter extends components\aggregations\BaseAggs implements components\Aggr
 
 
         $params = array(
-            "filter"       => $this->params['filter']->toArray()
+            "filter" => $this->params['filter']->toArray()
         );
 
         if ($this->params['aggs'] !== null) {

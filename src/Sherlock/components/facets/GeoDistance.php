@@ -14,6 +14,7 @@ use Sherlock\components;
 
 /**]
  * Class GeoDistance
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\GeoDistance facetname() facetname(\string $value)
@@ -24,7 +25,8 @@ use Sherlock\components;
  * @method \Sherlock\components\facets\GeoDistance value_script() value_script(string $value)
  * @method \Sherlock\components\facets\GeoDistance params() params(array $value)
  * @method \Sherlock\components\facets\GeoDistance lang() lang(\string $value)
- * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class GeoDistance extends components\BaseComponent implements components\FacetInterface
 {
@@ -34,14 +36,14 @@ class GeoDistance extends components\BaseComponent implements components\FacetIn
     public function __construct($hashMap = null)
     {
 
-        $this->params['facetname']    = null;
-        $this->params['ranges']       = null;
+        $this->params['facetname'] = null;
+        $this->params['ranges'] = null;
         $this->params['pin_location'] = null;
-        $this->params['unit']         = null;
-        $this->params['value_field']  = null;
+        $this->params['unit'] = null;
+        $this->params['value_field'] = null;
         $this->params['value_script'] = null;
-        $this->params['params']       = null;
-        $this->params['lang']         = null;
+        $this->params['params'] = null;
+        $this->params['lang'] = null;
         $this->params['facet_filter'] = null;
 
         parent::__construct($hashMap);
@@ -94,13 +96,13 @@ class GeoDistance extends components\BaseComponent implements components\FacetIn
             $this->params['facetname'] => array(
                 "geo_distance" => array(
                     $this->params['field'] => array(
-                        "pin.location"  => $this->params['pin_location'],
-                        "ranges"        => $this->params['ranges'],
-                        "value_field"   => $this->params['value_field'],
-                        "value_script"  => $this->params['value_script'],
-                        "params"        => $this->params['params'],
-                        "lang"          => $this->params['lang'],
-                        "unit"          => $this->params['unit'],
+                        "pin.location" => $this->params['pin_location'],
+                        "ranges" => $this->params['ranges'],
+                        "value_field" => $this->params['value_field'],
+                        "value_script" => $this->params['value_script'],
+                        "params" => $this->params['params'],
+                        "lang" => $this->params['lang'],
+                        "unit" => $this->params['unit'],
                         "distance_type" => $this->params['distance_type']
                     )
                 ),

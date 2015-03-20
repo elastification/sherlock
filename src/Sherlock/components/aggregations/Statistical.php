@@ -8,6 +8,7 @@ use Sherlock\components;
 
 /**]
  * Class Statistical
+ *
  * @package Sherlock\components\aggregations
  *
  * @method \Sherlock\components\aggregations\Statistical aggsname() aggsname(\string $value)
@@ -22,10 +23,10 @@ class Statistical extends components\BaseComponent implements components\Aggrega
      */
     public function __construct($hashMap = null)
     {
-        $this->params['aggsname']    = null;
-        $this->params['script']       = null;
-        $this->params['params']       = null;
-        $this->params['lang']         = null;
+        $this->params['aggsname'] = null;
+        $this->params['script'] = null;
+        $this->params['params'] = null;
+        $this->params['lang'] = null;
 
         parent::__construct($hashMap);
     }
@@ -59,11 +60,11 @@ class Statistical extends components\BaseComponent implements components\Aggrega
     {
         $params = array();
         if (!isset($this->params['field'])) {
-                        throw new RuntimeException("Fields parameter is required for a Statistical Aggregation");
+            throw new RuntimeException("Fields parameter is required for a Statistical Aggregation");
         }
 
         if ($this->params['field'] === null) {
-                        throw new RuntimeException("Field parameter may not be null");
+            throw new RuntimeException("Field parameter may not be null");
         }
 
         //if the user didn't provide a facetname, use the field as a default name
@@ -72,7 +73,7 @@ class Statistical extends components\BaseComponent implements components\Aggrega
         }
 
         $params = array(
-            "stats"  => array(
+            "stats" => array(
                 "field" => $this->params['field']
             )
         );

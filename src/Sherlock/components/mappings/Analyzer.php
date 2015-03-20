@@ -7,8 +7,8 @@
 namespace Sherlock\components\mappings;
 
 
-use Sherlock\components;
 use Sherlock\common\exceptions;
+use Sherlock\components;
 
 /**
  * @method \Sherlock\components\mappings\Analyzer path() path(\string $value)
@@ -32,7 +32,7 @@ class Analyzer extends \Sherlock\components\BaseComponent implements \Sherlock\c
             $this->type = $type;
         }
 
-        $this->params['path']  = null;
+        $this->params['path'] = null;
         $this->params['index'] = null;
 
         parent::__construct($hashMap);
@@ -48,7 +48,7 @@ class Analyzer extends \Sherlock\components\BaseComponent implements \Sherlock\c
         $ret = array();
 
         if (!isset($this->params['path'])) {
-                        throw new exceptions\RuntimeException("Path must be set for Analyzer mapping");
+            throw new exceptions\RuntimeException("Path must be set for Analyzer mapping");
         }
 
         $ret['_analyzer']['path'] = $this->params['path'];

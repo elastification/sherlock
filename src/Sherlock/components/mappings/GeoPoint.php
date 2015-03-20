@@ -3,13 +3,14 @@
  * User: Brian Seitel
  * Date: 5/16/13
  * Time: 11:45 AM
+ *
  * @package Sherlock\components\mappings
  */
 
 namespace Sherlock\components\mappings;
 
-use Sherlock\components;
 use Sherlock\common\exceptions;
+use Sherlock\components;
 
 /**
  * @method \Sherlock\components\mappings\GeoPoint field() field(\string $value)

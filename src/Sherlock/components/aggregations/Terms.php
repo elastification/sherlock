@@ -13,6 +13,7 @@ use Sherlock\components;
 
 /**]
  * Class Terms
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\Terms facetname() facetname(\string $value)
@@ -26,7 +27,8 @@ use Sherlock\components;
  * @method \Sherlock\components\facets\Terms script_field() script_field(\string $value)
  * @method \Sherlock\components\facets\Terms params() params(array $value)
  * @method \Sherlock\components\facets\Terms lang() lang(\string $value)
- * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class Terms extends components\BaseComponent implements components\FacetInterface
 {
@@ -35,20 +37,20 @@ class Terms extends components\BaseComponent implements components\FacetInterfac
      */
     public function __construct($hashMap = null)
     {
-        $this->params['order']     = 'count';
+        $this->params['order'] = 'count';
         $this->params['all_terms'] = false;
 
-        $this->params['facetname']    = null;
-        $this->params['size']         = null;
-        $this->params['exclude']      = null;
-        $this->params['regex']        = null;
-        $this->params['regex_flags']  = null;
-        $this->params['script']       = null;
+        $this->params['facetname'] = null;
+        $this->params['size'] = null;
+        $this->params['exclude'] = null;
+        $this->params['regex'] = null;
+        $this->params['regex_flags'] = null;
+        $this->params['script'] = null;
         $this->params['script_field'] = null;
-        $this->params['params']       = null;
-        $this->params['lang']         = null;
+        $this->params['params'] = null;
+        $this->params['lang'] = null;
         $this->params['facet_filter'] = null;
-        $this->params['nested']       = null;
+        $this->params['nested'] = null;
 
         parent::__construct($hashMap);
     }
@@ -86,11 +88,11 @@ class Terms extends components\BaseComponent implements components\FacetInterfac
     public function toArray()
     {
         if (!isset($this->params['fields'])) {
-                        throw new RuntimeException("Fields parameter is required for a Facet");
+            throw new RuntimeException("Fields parameter is required for a Facet");
         }
 
         if ($this->params['fields'] === null) {
-                        throw new RuntimeException("Fields parameter may not be null");
+            throw new RuntimeException("Fields parameter may not be null");
         }
 
         //if the user didn't provide a facetname, use the (first) field as a default name
@@ -104,21 +106,21 @@ class Terms extends components\BaseComponent implements components\FacetInterfac
 
         $ret = array(
             $this->params['facetname'] => array(
-                "terms"        => array(
-                    "fields"       => $this->params['fields'],
-                    "order"        => $this->params['order'],
-                    "all_terms"    => $this->params['all_terms'],
-                    "size"         => $this->params['size'],
-                    "exclude"      => $this->params['exclude'],
-                    "regex"        => $this->params['regex'],
-                    "regex_flags"  => $this->params['regex_flags'],
-                    "script"       => $this->params['script'],
+                "terms" => array(
+                    "fields" => $this->params['fields'],
+                    "order" => $this->params['order'],
+                    "all_terms" => $this->params['all_terms'],
+                    "size" => $this->params['size'],
+                    "exclude" => $this->params['exclude'],
+                    "regex" => $this->params['regex'],
+                    "regex_flags" => $this->params['regex_flags'],
+                    "script" => $this->params['script'],
                     "script_field" => $this->params['script_field'],
-                    "params"       => $this->params['params'],
-                    "lang"         => $this->params['lang']
+                    "params" => $this->params['params'],
+                    "lang" => $this->params['lang']
                 ),
-                "facet_filter"  => $this->params['facet_filter'],
-                "nested"    => $this->params['nested']
+                "facet_filter" => $this->params['facet_filter'],
+                "nested" => $this->params['nested']
             )
         );
 

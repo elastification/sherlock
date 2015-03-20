@@ -3,13 +3,14 @@
  * User: Zachary Tong
  * Date: 2/16/13
  * Time: 10:23 PM
+ *
  * @package Sherlock\components\mappings
  */
 
 namespace Sherlock\components\mappings;
 
-use Sherlock\components;
 use Sherlock\common\exceptions;
+use Sherlock\components;
 
 /**
  * @method \Sherlock\components\mappings\Object field() field(\string $value)
@@ -41,11 +42,11 @@ class Object extends \Sherlock\components\BaseComponent implements \Sherlock\com
     {
         $ret = array();
         if (!isset($this->params['field'])) {
-                        throw new \Sherlock\common\exceptions\RuntimeException("Field name must be set for Object mapping");
+            throw new \Sherlock\common\exceptions\RuntimeException("Field name must be set for Object mapping");
         }
 
         if (!isset($this->params['object'])) {
-                        throw new \Sherlock\common\exceptions\RuntimeException("Object parameter must be set for Object mapping");
+            throw new \Sherlock\common\exceptions\RuntimeException("Object parameter must be set for Object mapping");
         }
 
         $object = $this->params['object']->toArray();

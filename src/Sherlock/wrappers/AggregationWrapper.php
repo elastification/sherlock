@@ -4,6 +4,7 @@ namespace Sherlock\wrappers;
 
 /**
  * Class AggregationWrapper
+ *
  * @package Sherlock\wrappers
  *
  *

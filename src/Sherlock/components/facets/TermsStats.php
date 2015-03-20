@@ -8,11 +8,11 @@
 namespace Sherlock\components\facets;
 
 
-use Sherlock\common\exceptions\RuntimeException;
 use Sherlock\components;
 
 /**
  * Class TermsStats
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\TermsStats facetname() facetname(\string $value)
@@ -28,7 +28,8 @@ use Sherlock\components;
  * @method \Sherlock\components\facets\TermsStats value_script() value_script(\string $value)
  * @method \Sherlock\components\facets\TermsStats params() params(\string $value)
  * @method \Sherlock\components\facets\TermsStats lang() lang(\string $value)
- * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class TermsStats extends components\BaseComponent implements components\FacetInterface
 {
@@ -37,20 +38,20 @@ class TermsStats extends components\BaseComponent implements components\FacetInt
      */
     public function __construct($hashMap = null)
     {
-        $this->params['order']     = 'count';
+        $this->params['order'] = 'count';
         $this->params['all_terms'] = false;
 
-        $this->params['facetname']    = null;
-        $this->params['size']         = null;
-        $this->params['exclude']      = null;
-        $this->params['regex']        = null;
-        $this->params['regex_flags']  = null;
-        $this->params['key_field']    = null;
-        $this->params['value_field']  = null;
-        $this->params['key_script']   = null;
+        $this->params['facetname'] = null;
+        $this->params['size'] = null;
+        $this->params['exclude'] = null;
+        $this->params['regex'] = null;
+        $this->params['regex_flags'] = null;
+        $this->params['key_field'] = null;
+        $this->params['value_field'] = null;
+        $this->params['key_script'] = null;
         $this->params['value_script'] = null;
-        $this->params['params']       = null;
-        $this->params['lang']         = null;
+        $this->params['params'] = null;
+        $this->params['lang'] = null;
         $this->params['facet_filter'] = null;
 
         parent::__construct($hashMap);
@@ -100,20 +101,20 @@ class TermsStats extends components\BaseComponent implements components\FacetInt
 
         $ret = array(
             $this->params['facetname'] => array(
-                "terms_stats"  => array(
-                    "fields"         => $this->params['fields'],
-                    "order"          => $this->params['order'],
+                "terms_stats" => array(
+                    "fields" => $this->params['fields'],
+                    "order" => $this->params['order'],
                     "all_TermsStats" => $this->params['all_TermsStats'],
-                    "size"           => $this->params['size'],
-                    "exclude"        => $this->params['exclude'],
-                    "regex"          => $this->params['regex'],
-                    "regex_flags"    => $this->params['regex_flags'],
-                    "key_field"      => $this->params['key_field'],
-                    "value_field"    => $this->params['value_field'],
-                    "key_script"     => $this->params['key_script'],
-                    "value_script"   => $this->params['value_script'],
-                    "params"         => $this->params['params'],
-                    "lang"           => $this->params['lang']
+                    "size" => $this->params['size'],
+                    "exclude" => $this->params['exclude'],
+                    "regex" => $this->params['regex'],
+                    "regex_flags" => $this->params['regex_flags'],
+                    "key_field" => $this->params['key_field'],
+                    "value_field" => $this->params['value_field'],
+                    "key_script" => $this->params['key_script'],
+                    "value_script" => $this->params['value_script'],
+                    "params" => $this->params['params'],
+                    "lang" => $this->params['lang']
                 ),
                 "facet_filter" => $this->params['facet_filter']
             )

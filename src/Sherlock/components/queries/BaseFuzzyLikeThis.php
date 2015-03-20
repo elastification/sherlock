@@ -12,6 +12,7 @@ use Sherlock\components\BaseComponent;
 
 /**
  * Class BaseFuzzyLikeThis
+ *
  * @package Sherlock\components\queries
  */
 abstract class BaseFuzzyLikeThis extends BaseComponent

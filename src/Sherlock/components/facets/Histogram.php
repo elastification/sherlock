@@ -9,11 +9,11 @@ namespace Sherlock\components\facets;
 
 
 use Sherlock\common\exceptions\BadMethodCallException;
-use Sherlock\common\exceptions\RuntimeException;
 use Sherlock\components;
 
 /**]
  * Class Histogram
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\Histogram facetname() facetname(\string $value)
@@ -25,7 +25,8 @@ use Sherlock\components;
  * @method \Sherlock\components\facets\Histogram value_script() value_script(\string $value)
  * @method \Sherlock\components\facets\Histogram params() params(array $value)
  * @method \Sherlock\components\facets\Histogram lang() lang(\string $value)
- * @method \Sherlock\components\facets\Histogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\Histogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class Histogram extends components\BaseComponent implements components\FacetInterface
 {
@@ -35,16 +36,16 @@ class Histogram extends components\BaseComponent implements components\FacetInte
     public function __construct($hashMap = null)
     {
 
-        $this->params['facetname']     = null;
-        $this->params['interval']      = null;
+        $this->params['facetname'] = null;
+        $this->params['interval'] = null;
         $this->params['time_interval'] = null;
-        $this->params['params']        = null;
-        $this->params['key_field']     = null;
-        $this->params['value_field']   = null;
-        $this->params['key_script']    = null;
-        $this->params['value_script']  = null;
-        $this->params['lang']          = null;
-        $this->params['facet_filter']  = null;
+        $this->params['params'] = null;
+        $this->params['key_field'] = null;
+        $this->params['value_field'] = null;
+        $this->params['key_script'] = null;
+        $this->params['value_script'] = null;
+        $this->params['lang'] = null;
+        $this->params['facet_filter'] = null;
 
         parent::__construct($hashMap);
     }
@@ -63,7 +64,7 @@ class Histogram extends components\BaseComponent implements components\FacetInte
         if (is_string($fieldName)) {
             $this->params['field'] = $fieldName;
         } else {
-                        throw new BadMethodCallException("Field must be a string");
+            throw new BadMethodCallException("Field must be a string");
         }
 
         return $this;
@@ -91,17 +92,17 @@ class Histogram extends components\BaseComponent implements components\FacetInte
         $ret = array(
             $this->params['facetname'] => array(
                 "histogram" => array(
-                    "field"         => $this->params['field'],
-                    "interval"      => $this->params['interval'],
+                    "field" => $this->params['field'],
+                    "interval" => $this->params['interval'],
                     "time_interval" => $this->params['time_interval'],
-                    "key_field"     => $this->params['key_field'],
-                    "value_field"   => $this->params['value_field'],
-                    "key_script"    => $this->params['key_script'],
-                    "value_script"  => $this->params['value_script'],
-                    "params"        => $this->params['params'],
-                    "lang"          => $this->params['lang']
+                    "key_field" => $this->params['key_field'],
+                    "value_field" => $this->params['value_field'],
+                    "key_script" => $this->params['key_script'],
+                    "value_script" => $this->params['value_script'],
+                    "params" => $this->params['params'],
+                    "lang" => $this->params['lang']
                 ),
-                "facet_filter"             => $facet_filter
+                "facet_filter" => $facet_filter
             )
 
         );

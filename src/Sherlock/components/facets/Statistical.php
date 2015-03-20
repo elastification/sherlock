@@ -13,13 +13,15 @@ use Sherlock\components;
 
 /**]
  * Class Statistical
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\Statistical facetname() facetname(\string $value)
  * @method \Sherlock\components\facets\Statistical script() script(\string $value)
  * @method \Sherlock\components\facets\Statistical params() params(array $value)
  * @method \Sherlock\components\facets\Statistical lang() lang(\string $value)
- * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class Statistical extends components\BaseComponent implements components\FacetInterface
 {
@@ -28,10 +30,10 @@ class Statistical extends components\BaseComponent implements components\FacetIn
      */
     public function __construct($hashMap = null)
     {
-        $this->params['facetname']    = null;
-        $this->params['script']       = null;
-        $this->params['params']       = null;
-        $this->params['lang']         = null;
+        $this->params['facetname'] = null;
+        $this->params['script'] = null;
+        $this->params['params'] = null;
+        $this->params['lang'] = null;
         $this->params['facet_filter'] = null;
 
         parent::__construct($hashMap);
@@ -70,11 +72,11 @@ class Statistical extends components\BaseComponent implements components\FacetIn
     public function toArray()
     {
         if (!isset($this->params['fields'])) {
-                        throw new RuntimeException("Fields parameter is required for a Statistical Facet");
+            throw new RuntimeException("Fields parameter is required for a Statistical Facet");
         }
 
         if ($this->params['fields'] === null) {
-                        throw new RuntimeException("Fields parameter may not be null");
+            throw new RuntimeException("Fields parameter may not be null");
         }
 
         //if the user didn't provide a facetname, use the field as a default name
@@ -89,11 +91,11 @@ class Statistical extends components\BaseComponent implements components\FacetIn
 
         $ret = array(
             $this->params['facetname'] => array(
-                "statistical"  => array(
+                "statistical" => array(
                     "fields" => $this->params['fields'],
                     "script" => $this->params['script'],
                     "params" => $this->params['params'],
-                    "lang"   => $this->params['lang']
+                    "lang" => $this->params['lang']
                 ),
                 "facet_filter" => $this->params['facet_filter']
             )

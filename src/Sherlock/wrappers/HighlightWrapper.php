@@ -4,6 +4,7 @@ namespace Sherlock\wrappers;
 
 /**
  * Class HighlightWrapper
+ *
  * @package Sherlock\wrappers
  *
  *

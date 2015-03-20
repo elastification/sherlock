@@ -3,12 +3,13 @@
  * User: Zachary Tong
  * Date: 2013-02-14
  * Time: 10:42 PM
+ *
  * @package Sherlock\components\mappings
  */
 namespace Sherlock\components\mappings;
 
-use Sherlock\components;
 use Sherlock\common\exceptions;
+use Sherlock\components;
 
 /**
  * @method \Sherlock\components\mappings\Date field() field(\string $value)

@@ -3,6 +3,7 @@
  * User: Zachary Tong
  * Date: 2/4/13
  * Time: 10:28 AM
+ *
  * @package Sherlock
  * @author  Zachary Tong
  * @version 0.1.2
@@ -10,15 +11,17 @@
 
 namespace Sherlock;
 
+use Elasticsearch\Client as ESClient;
 use Sherlock\common\Cluster;
 use Sherlock\common\events\Events;
-use Sherlock\requests;
 use Sherlock\common\exceptions;
+use Sherlock\requests;
 use Sherlock\wrappers;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Elasticsearch\Client as ESClient;
+
 /**
  * Class Sherlock
+ *
  * @package Sherlock
  */
 class Sherlock
@@ -52,6 +55,7 @@ class Sherlock
 
     /**
      * Query builder, used to return a QueryWrapper through which a Query component can be selected
+     *
      * @return wrappers\QueryWrapper
      */
     public static function queryBuilder()
@@ -62,6 +66,7 @@ class Sherlock
 
     /**
      * Filter builder, used to return a FilterWrapper through which a Filter component can be selected
+     *
      * @return wrappers\FilterWrapper
      */
     public static function filterBuilder()
@@ -72,6 +77,7 @@ class Sherlock
 
     /**
      * Facet builder, used to return a FilterWrapper through which a Filter component can be selected
+     *
      * @return wrappers\FacetWrapper
      */
     public static function facetBuilder()
@@ -82,6 +88,7 @@ class Sherlock
 
     /**
      * Facet builder, used to return a FilterWrapper through which a Filter component can be selected
+     *
      * @return wrappers\AggregationWrapper
      */
     public static function aggregationBuilder()
@@ -92,6 +99,7 @@ class Sherlock
 
     /**
      * Highlight builder, used to return a HighlightWrapper through which a Highlight component can be selected
+     *
      * @return wrappers\HighlightWrapper
      */
     public static function highlightBuilder()
@@ -102,6 +110,7 @@ class Sherlock
 
     /**
      * Index builder, used to return a IndexWrapper through which an Index component can be selected
+     *
      * @return wrappers\IndexSettingsWrapper
      */
     public static function indexSettingsBuilder()
@@ -113,7 +122,7 @@ class Sherlock
     /**
      * Mapping builder, used to return a MappingWrapper through which a Mapping component can be selected
      *
-     * @param  null|string                     $type
+     * @param  null|string $type
      *
      * @return wrappers\MappingPropertyWrapper
      */
@@ -164,8 +173,8 @@ class Sherlock
     {
         return array(
             // Application
-            'base'               => __DIR__ . '/',
-            'mode'               => 'development',
+            'base' => __DIR__ . '/',
+            'mode' => 'development',
         );
     }
 

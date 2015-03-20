@@ -3,6 +3,7 @@
  * User: Zachary Tong
  * Date: 3/7/13
  * Time: 8:12 PM
+ *
  * @package Sherlock\components\sorts
  */
 
@@ -21,8 +22,8 @@ class GeoDistance extends components\BaseComponent implements components\SortInt
 {
     public function __construct($hashMap = null)
     {
-        $this->params['order']           = 'asc';
-        $this->params['unit']            = 'km';
+        $this->params['order'] = 'asc';
+        $this->params['unit'] = 'km';
 
         parent::__construct($hashMap);
     }
@@ -33,7 +34,7 @@ class GeoDistance extends components\BaseComponent implements components\SortInt
         $ret = array(
             '_geo_distance' => array(
                 $this->params['name'] => array($this->params['lon'], $this->params['lat']),
-                'order'           => $this->params["order"],
+                'order' => $this->params["order"],
                 'unit' => $this->params["unit"]
             )
         );

@@ -5,11 +5,11 @@ namespace Sherlock\components\aggregations;
 
 
 use Sherlock\common\exceptions\BadMethodCallException;
-use Sherlock\common\exceptions\RuntimeException;
 use Sherlock\components;
 
 /**]
  * Class Histogram
+ *
  * @package Sherlock\components\aggregations
  *
  * @method \Sherlock\components\aggregations\Histogram aggsname() facetname(\string $value)
@@ -24,10 +24,10 @@ class Histogram extends BaseAggs implements components\AggregationInterface
     public function __construct($hashMap = null)
     {
 
-        $this->params['aggsname']     = null;
-        $this->params['interval']      = null;
-        $this->params['params']        = null;
-        $this->params['min_doc_count']  = null;
+        $this->params['aggsname'] = null;
+        $this->params['interval'] = null;
+        $this->params['params'] = null;
+        $this->params['min_doc_count'] = null;
         parent::__construct($hashMap);
     }
 
@@ -45,7 +45,7 @@ class Histogram extends BaseAggs implements components\AggregationInterface
         if (is_string($fieldName)) {
             $this->params['field'] = $fieldName;
         } else {
-                        throw new BadMethodCallException("Field must be a string");
+            throw new BadMethodCallException("Field must be a string");
         }
 
         return $this;
@@ -70,8 +70,8 @@ class Histogram extends BaseAggs implements components\AggregationInterface
 
         $params = array(
             "histogram" => array(
-                "field"         => $this->params['field'],
-                "interval"      => $this->params['interval'],
+                "field" => $this->params['field'],
+                "interval" => $this->params['interval'],
                 "min_doc_count" => $this->params['min_doc_count'],
             )
         );

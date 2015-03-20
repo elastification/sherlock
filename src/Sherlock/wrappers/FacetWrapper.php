@@ -9,6 +9,7 @@ namespace Sherlock\wrappers;
 
 /**
  * Class FacetWrapper
+ *
  * @package Sherlock\wrappers
  *
  *

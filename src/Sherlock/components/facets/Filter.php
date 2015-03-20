@@ -13,11 +13,13 @@ use Sherlock\components;
 
 /**]
  * Class Filter
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\Filter facetname() facetname(\string $value)
  * @method \Sherlock\components\facets\Filter filter() filter(\Sherlock\components\FilterInterface $value)
- * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class Filter extends components\BaseComponent implements components\FacetInterface
 {
@@ -27,7 +29,7 @@ class Filter extends components\BaseComponent implements components\FacetInterfa
     public function __construct($hashMap = null)
     {
 
-        $this->params['facetname']    = null;
+        $this->params['facetname'] = null;
         $this->params['facet_filter'] = null;
 
         parent::__construct($hashMap);
@@ -86,7 +88,7 @@ class Filter extends components\BaseComponent implements components\FacetInterfa
 
         $ret = array(
             $this->params['facetname'] => array(
-                "filter"       => $this->params['filter']->toArray(),
+                "filter" => $this->params['filter']->toArray(),
                 "facet_filter" => $this->params['facet_filter']
             )
         );

@@ -8,11 +8,11 @@
 namespace Sherlock\components\facets;
 
 use Sherlock\common\exceptions\BadMethodCallException;
-use Sherlock\common\exceptions\RuntimeException;
 use Sherlock\components;
 
 /**]
  * Class DateHistogram
+ *
  * @package Sherlock\components\facets
  *
  * @method \Sherlock\components\facets\DateHistogram facetname() facetname(\string $value)
@@ -23,7 +23,8 @@ use Sherlock\components;
  * @method \Sherlock\components\facets\DateHistogram value_script() value_script(\string $value)
  * @method \Sherlock\components\facets\DateHistogram params() params(array $value)
  * @method \Sherlock\components\facets\DateHistogram lang() lang(\string $value)
- * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface $value)
+ * @method \Sherlock\components\facets\DateHistogram facet_filter() facet_filter(\Sherlock\components\FilterInterface
+ *         $value)
  */
 class DateHistogram extends components\BaseComponent implements components\FacetInterface
 {
@@ -32,15 +33,15 @@ class DateHistogram extends components\BaseComponent implements components\Facet
      */
     public function __construct($hashMap = null)
     {
-        $this->params['field']        = null;
-        $this->params['facetname']    = null;
-        $this->params['interval']     = null;
-        $this->params['params']       = null;
-        $this->params['key_field']    = null;
-        $this->params['value_field']  = null;
-        $this->params['key_script']   = null;
+        $this->params['field'] = null;
+        $this->params['facetname'] = null;
+        $this->params['interval'] = null;
+        $this->params['params'] = null;
+        $this->params['key_field'] = null;
+        $this->params['value_field'] = null;
+        $this->params['key_script'] = null;
         $this->params['value_script'] = null;
-        $this->params['lang']         = null;
+        $this->params['lang'] = null;
         $this->params['facet_filter'] = null;
 
         parent::__construct($hashMap);
@@ -86,16 +87,16 @@ class DateHistogram extends components\BaseComponent implements components\Facet
         $ret = array(
             $this->params['facetname'] => array(
                 "date_histogram" => array(
-                    "field"        => $this->params['field'],
-                    "interval"     => $this->params['interval'],
-                    "key_field"    => $this->params['key_field'],
-                    "value_field"  => $this->params['value_field'],
-                    "key_script"   => $this->params['key_script'],
+                    "field" => $this->params['field'],
+                    "interval" => $this->params['interval'],
+                    "key_field" => $this->params['key_field'],
+                    "value_field" => $this->params['value_field'],
+                    "key_script" => $this->params['key_script'],
                     "value_script" => $this->params['value_script'],
-                    "params"       => $this->params['params'],
-                    "lang"         => $this->params['lang']
+                    "params" => $this->params['params'],
+                    "lang" => $this->params['lang']
                 ),
-                "facet_filter"   => $this->params['facet_filter']
+                "facet_filter" => $this->params['facet_filter']
             )
         );
 
