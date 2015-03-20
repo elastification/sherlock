@@ -20,13 +20,7 @@ class MappingTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new Sherlock(
-            array(
-                "hosts" => array(
-                    "localhost:9200"
-                )
-            )
-        );
+        $this->object = new Sherlock();
     }
 
 
@@ -63,11 +57,7 @@ class MappingTest extends \PHPUnit_Framework_TestCase
     {
         $sherlock = $this->object;
 
-        //Set the index
-        $index = $sherlock->index('test123');
-
         //no type, no field, expect error
-
         $this->assertThrowsException(
             '\sherlock\common\exceptions\BadMethodCallException',
             function () {
@@ -141,9 +131,6 @@ class MappingTest extends \PHPUnit_Framework_TestCase
     {
         $sherlock = $this->object;
 
-        //Set the index
-        $index = $sherlock->index('test123');
-
         //no field, expect error
         $this->assertThrowsException(
             '\sherlock\common\exceptions\BadMethodCallException',
@@ -182,9 +169,6 @@ class MappingTest extends \PHPUnit_Framework_TestCase
     public function testDateMapping()
     {
         $sherlock = $this->object;
-
-        //Set the index
-        $index = $sherlock->index('test123');
 
         //no field, expect error
         $this->assertThrowsException(
